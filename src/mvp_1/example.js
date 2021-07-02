@@ -1,7 +1,5 @@
+import useRequest from './index';
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import useRequest from '../index';
 
 const getUser = (username) =>
   new Promise((resolve, reject) => {
@@ -10,7 +8,7 @@ const getUser = (username) =>
     }, 800);
   });
 
-const App = () => {
+const Demo = () => {
   const request = useRequest(getUser, {
     defaultParams: 'aaaa',
     pollingInterval: 2000,
@@ -25,4 +23,5 @@ const App = () => {
     </div>
   );
 };
-ReactDOM.render(<App></App>, document.getElementById('root'));
+
+export default Demo;

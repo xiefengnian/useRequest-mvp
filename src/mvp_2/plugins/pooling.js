@@ -6,8 +6,6 @@ const usePoolingPlugin = (pollingInterval, pollingWhenHidden) => {
   const _state = useRef();
   const _context = useRef();
 
-  console.log('in plugin:state', _state);
-
   const runner = () => {
     if (!suspended) {
       _context.current.run();

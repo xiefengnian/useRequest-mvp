@@ -4,6 +4,7 @@ import { HashRouter, Link, Route, Switch } from 'react-router-dom';
 
 import Mvp1 from './mvp_1/example';
 import Mvp2 from './mvp_2/example';
+import Mvp3 from './mvp_3/example';
 
 const Home = () => {
   return (
@@ -13,6 +14,9 @@ const Home = () => {
       </li>
       <li>
         <Link to="/mvp2">mvp 2</Link>
+      </li>
+      <li>
+        <Link to="/mvp3">mvp 3</Link>
       </li>
     </ul>
   );
@@ -30,6 +34,9 @@ const App = () => {
         </Route>
         <Route path="/mvp2" exact>
           <Mvp2></Mvp2>
+        </Route>
+        <Route path="/mvp3" exact>
+          <Mvp3></Mvp3>
         </Route>
       </Switch>
     </HashRouter>

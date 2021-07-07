@@ -16,6 +16,11 @@ module.exports = {
   experiments: {
     topLevelAwait: true,
   },
+  resolve: {
+    alias: {
+      useRequest: path.resolve(__dirname, 'src/useRequest/index.js'),
+    },
+  },
   // devtool: 'inline-source-map',
   module: {
     rules: [
@@ -55,6 +60,11 @@ module.exports = {
             plugins: ['@babel/plugin-syntax-top-level-await'],
           },
         },
+      },
+      {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },

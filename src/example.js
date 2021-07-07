@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import useRequest from './useRequest';
+import useRequest from 'useRequest';
 import useDebouncePlugin from './useRequest/plugins/useDebouncePlugin';
 import useFetchKey from './useRequest/plugins/useFetchKeyPlugin';
 import useLoadingDelayPlugin from './useRequest/plugins/useLoadingDelayPlugin';
@@ -42,6 +42,7 @@ const DebounceDemo = () => {
   const refreshPlugin = useRefreshOnWindowFocusPlugin();
   const request = useRequest(getUser, {
     plugins: [throttlePlugin, countPlugin, readyPlugin, loadingDelayPlugin, refreshPlugin],
+    defaultParams: ['foo', 'bar'],
   });
   console.log('DebounceDemo', request);
   return (

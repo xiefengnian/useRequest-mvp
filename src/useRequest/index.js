@@ -26,13 +26,12 @@ const useRequestImplement = (fetcher, options) => {
     }
   };
 
-  const runImplement = (...params) => {
+  const runImplement = (params) => {
     // params : ['foo','bar']
     (async () => {
       let runParams = getParamWithCache(params);
       setLoading(true);
       await runPluginHandler('onBefore', runParams);
-
       fetcher(...runParams)
         .then(async (res) => {
           await runPluginHandler('onSuccess', runParams, res);
